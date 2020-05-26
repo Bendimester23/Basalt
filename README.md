@@ -1,64 +1,57 @@
-# EmpireCraft #
-## What ##
-EmpireCraft is a fork of Spigot used by the [Empire Minecraft](http://ref.emc.gs/Aikar?gam=EmpireCraft) Server.
+Basalt ![Java CI with Maven](https://github.com/Bendimester23/Basalt/workflows/Build/badge.svg)
+===========
 
-It contains many gameplay changes to suit our server, but more importantly, contains new performance improvements pending
-testing to be contributed to Spigot / Sponge.
-
-We also have many API's that we privately use but choose to not publicly PR them upstream, see below for why.
-
-## Why we don't release all API ##
-API's are tough to design. In public projects such as Bukkit, Spigot, Sponge etc, once an API is commited. It's almost
-forever. You can't go breaking it without solid justification. This is the politics game.
-
-With that in mind, much thought has to be given to the API in now and future use cases and applications to ensure it can
-be extended without breaking.
-
-This is a lot of politics that we don't have time in our lives to deal with.
-
-Therefor, we write API's to OUR base needs, which is often not 'complete' or 'up to style guidelines' of upstream repositories.
-We do not have the time to write code that we personally do not need for these API's.
-
-We also want to retain the ability to make breaking changes to the API if it results in a better way to do things or
-performance improvements.
-
-By contributing it upstream, we would give up that power.
-
-So that is why we have many extremely useful API's that are not PR'd upstream
-
-## LICENSE / Support / Usage of Patches ##
-All patches written by Aikar, Starlis LLC, Contractors of Starlis LLC that has been included inside of EmpireCraft
-are licensed MIT, and are free to be used in your own fork.
-
-We offer ABSOLUTELY NO SUPPORT for these patches. If you wish to use them, you must take the effect to extract them
-from our repo, apply them to your own, and repair any code changes to get it to compile (note: we use a .callEvent()
-utility method on the Event class for nearly all Custom Events to reduce diff.)
-
-If we make a breaking change, and you wish to pull the patch to update it after that, it's your job to fix the changes!
-
-So in summary, we love to share! Use anything we wrote in this repo how ever you please, but support it yourself :)
+High performance Paper fork that aims to add more gameplay and mechanics.
 
 
-## OS Support / Scripts##
-We only directly support Ubuntu 14.04 for the shell scripts. It may work elsewhere... but no promises.
+**Support and Project Discussion:**
+ - [Discord](https://discord.io/skyv)
 
-Many scripts will try to push to our repo's, please change that if you fork :)
+Planned Features
+------
+ * API for NMS files
+ * Custom Items / Blocks / Materials
+ * Play custom audio files client side (without browser)
 
-### scripts/importmcdev ###
-Imports specific files from mc-dev that CB/Spigot doesn't use but we need.
+How To (Server Admins)
+------
+Basaltshard is a jar file that you can download and run just like a normal jar file.
 
-### scripts/updatespigot ###
-updates the Bukkit/CraftBukkit/Spigot baseline when passed --update, otherwise regenerates the baseline with changes
-to mcdev from importmcdev
+You cant download it right now.
 
-Run `scripts/applypatches` then `scripts/rebuildpatches` immediately after
+Run the Paperclip jar directly from your server. Just like old times
 
-### scripts/generatesources ###
-Generates an mc-dev folder that can be added to IDE for the other mc-dev files located in minecraft-server.jar
+  * Documentation on using Paper: [paper.readthedocs.io](https://paper.readthedocs.io/)
+  * For a sneak peak on upcoming features, [see here](https://github.com/PaperMC/Paper/projects)
 
-### scripts/rebuildpatches ###
-Rebuilds patch state from the EmpireCraft-* repo's current state. Automatically handles patch deletion and renaming
-for you unlike Spigots version of these scripts.
+How To (Plugin Developers)
+------
+ * See our API patches [here](Spigot-API-Patches)
+ * See upcoming, pending, and recently added API [here](https://github.com/PaperMC/Paper/projects/6)
+ * Paper API javadocs here: [papermc.io/javadocs](https://papermc.io/javadocs/)
+ * Maven Repo (for paper-api):
+```xml
+<repository>
+    <id>papermc</id>
+    <url>https://papermc.io/repo/repository/maven-public/</url>
+</repository>
+```
+ * Artifact Information:
+```xml
+<dependency>
+    <groupId>com.destroystokyo.paper</groupId>
+    <artifactId>paper-api</artifactId>
+    <version>1.15.2-R0.1-SNAPSHOT</version>
+    <scope>provided</scope>
+ </dependency>
+ ```
 
-### scripts/applypatches ###
-Takes current patches/{bukkit,craftbukkit} and applys them on latest spigot upstream
+How To (Compiling Jar From Source)
+------
+To compile Paper, you need JDK 8, maven, and an internet connection.
+
+Clone this repo, run `./paper jar` from *bash*, get files.
+
+How To (Pull Request)
+------
+See [Contributing](CONTRIBUTING.md)
