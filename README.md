@@ -1,4 +1,4 @@
-Basalt ![Java CI with Maven](https://github.com/Bendimester23/Basalt/workflows/Build/badge.svg)
+Basalt ![Java CI with Maven](https://github.com/Bendimester23/BasaltMC/workflows/Build/badge.svg)
 ===========
 
 High performance Paper fork that aims to add more gameplay and mechanics.
@@ -50,7 +50,7 @@ How To (Compiling Jar From Source)
 ------
 To compile Paper, you need JDK 8, maven, and an internet connection.
 
-Clone this repo, run `./paper jar` from *bash*, get files.
+Clone this repo, run `./basalt jar` from *bash*, get files.
 
 How To (Pull Request)
 ------
